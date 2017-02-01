@@ -1,0 +1,78 @@
+package practice1;
+import java.util.Scanner;
+public class holla
+{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of elements: ");
+		int n = sc.nextInt();
+		int[] a = new int[50] ;
+		int low = 0;
+		int high = n-1;
+		int mid = (low+high)/2;
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("enter the number u want to insert: ");
+			a[i] = sc.nextInt();
+		}
+		merges(a,low,high);
+		for(int i=0;i<n;i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+	}
+
+
+public static void merge(int a[],int low,int mid,int high)
+{
+int i,j,k;
+int[] b=new int[50];
+i=low;
+j=mid+1;
+k=low;
+while(i<=mid && j<=high)
+{
+	if(a[i]<a[j])
+	{
+	b[k]=a[i];
+	i++;
+	k++;
+	}
+	else{
+		b[k]=a[j];
+		j++;
+		k++;
+	}
+}
+while(i<=mid)
+{
+	b[k]=a[i];
+	i++;
+	k++;
+}
+while(j<=high)
+{
+	b[k]=a[j];
+	j++;
+	k++;
+}
+for(i=low;i<=high;i++)
+{
+	a[i]=b[i];
+}
+	
+	
+}
+public static void merges(int a[],int low,int high)
+{
+	int mid;
+	if(low<high)
+	{
+		mid=(low+high)/2;
+		merges(a,low,mid);
+		merges(a,mid+1,high);
+		merge(a,low,mid,high);
+	}
+}
+}

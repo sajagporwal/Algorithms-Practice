@@ -1,0 +1,10 @@
+// short job first scheduling program
+
+package javap;
+
+public class sjfs {
+public static void main(String[] args)
+{
+	
+}
+}

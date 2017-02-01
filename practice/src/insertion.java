@@ -1,0 +1,26 @@
+
+public class insertion {
+public static void main(String[] args)
+{
+	int a[]={5,4,3,1,2};
+	insertions(a,4);
+	for(int i=0;i<=4;i++)
+	{
+		System.out.println(a[i]);
+	}
+}
+public static void insertions(int a[],int high)
+{
+	for(int i=1;i<=high;i++)
+	{
+		int val =a[i];
+		int hole=i;
+		while(hole>0 && a[hole-1]>a[hole])
+		{
+			a[hole-1]=a[hole];
+			hole-=1;
+		}
+		
+	}
+}
+}

@@ -1,0 +1,32 @@
+
+public class binary {
+public static void main(String[] args)
+{
+	int a[]={2,3,4,5,6,7,8,9};
+	int low=0;
+	int high=7;
+	int c=binarys(a,low,high);
+}
+public static int binarys(int a[],int low,int high)
+{
+	int mid;
+	while(low<=high)
+	{
+		mid=(low+high)/2;
+		if(a[mid]==4)
+		{
+			System.out.print("Found at position "+(mid+1));
+			return 0;
+		}
+		else if(4<a[mid])
+		{
+			return binarys(a,low,mid-1);
+		}
+		else
+		{
+			return binarys(a,mid+1,high);
+		}
+	}
+	
+}
+}
